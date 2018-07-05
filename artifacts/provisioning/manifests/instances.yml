@@ -1,0 +1,52 @@
+global_configuration:
+  CONTAINER_REGISTRY: 10.84.5.81:5000
+  REGISTRY_PRIVATE_INSECURE: True
+provider_config:
+  bms:
+    ssh_user: root
+    ssh_pwd: c0ntrail123
+    ntpserver: 10.84.5.100
+    domainsuffix: englab.juniper.net
+instances:
+  5c10s9:
+    ip: 10.87.74.69
+    provider: bms
+    roles:
+      config:
+      config_database:
+      control:
+      webui:
+      analytics:
+      analytics_database:
+      openstack_control:
+      openstack_network:
+      openstack_storage:
+        disk_partition: vda
+      openstack_monitoring:
+  5c10s7-node1:
+    ip: 10.87.74.65
+    provider: bms
+    roles:
+      vrouter:
+        TSN_EVPN_MODE: true
+        VROUTER_GATEWAY: 10.1.0.1
+contrail_configuration:
+  CONTRAIL_VERSION: ocata-5.0-119
+  CLOUD_ORCHESTRATOR: openstack
+  RABBITMQ_NODE_PORT: 5673
+  VROUTER_GATEWAY: 10.1.0.65
+  ENCAP_PRIORITY: MPLSoGRE,MPLSoUDP,VXLAN
+  AUTH_MODE: keystone
+  KEYSTONE_AUTH_HOST: 10.87.74.69
+  KEYSTONE_AUTH_URL_VERSION: /v3
+  CONTROLLER_NODES: 10.87.74.69
+  CONTROL_NODES: 10.1.0.2
+  TSN_NODES: 10.1.0.3
+kolla_config:
+  kolla_globals:
+    openstack_release: ocata
+    enable_haproxy: no
+    enable_ironic: no
+    enable_swift: no
+  kolla_passwords:
+    keystone_admin_password: contrail123
