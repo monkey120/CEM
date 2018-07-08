@@ -1,0 +1,6 @@
+Workload Type,HostName,Management IP,Disk Partition,Network Interface,MAC address,IPMI Driver,IPMI Address,IPMI UserName,IPMI Password,Memory mb,CPU's,CPU Arch,Local gb,Capabilities,Number of Network Interfaces,Interface Name,Interface MAC Address,Interface IP,Enable PXE,Interface Name,Interface MAC Address,Interface IP,Enable PXE
+physical,5c10s9,10.87.74.69,vda,enp4s0f0,0c:c4:7a:2a:7d:d8,,,,,,,,,,2,enp4s0f0,0c:c4:7a:2a:7d:d8,10.87.74.69,No,ens2f0,90:e2:ba:ed:49:50,10.1.0.2,No
+physical,5c10s11,10.87.74.70,vda,eno1,ac:1f:6b:02:e6:d4,,,,,,,,,,2,eno1,ac:1f:6b:02:e6:d4,10.87.74.70,No,ens1f1,90:e2:ba:ed:4c:0d,10.1.0.130,No
+physical,5c10s12,10.87.74.71,vda,eno1,ac:1f:6b:02:e6:02,,,,,,,,,,2,eno1,ac:1f:6b:02:e6:02,10.87.74.71,No,ens1f0,90:e2:ba:ed:48:08,10.1.0.66,No
+physical,5c10s7-node1,10.87.74.65,vda,eno1,0c:c4:7a:f8:d1:90,,,,,,,,,,2,eno1,0c:c4:7a:f8:d1:90,10.87.74.65,No,ens2f1,ac:1f:6b:2d:66:69,10.1.0.3,No
+physical,5c10s7-node3,10.87.74.67,vda,eno1,0c:c4:7a:f8:d4:22,,,,,,,,,,2,eno1,0c:c4:7a:f8:d4:22,10.87.74.67,No,ens2f1,ac:1f:6b:2d:65:9f,10.1.0.67,No
