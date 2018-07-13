@@ -145,3 +145,19 @@ systemctl enable ntpd
 systemctl restart ntpd
 systemctl status ntpd
 systemctl restart network
+
+
+ping -c 10 -f 10.1.0.2
+ping -c 10 -f 10.1.0.3
+ping -c 10 -f 10.1.0.2
+ping -c 10 -f 10.1.0.130
+ping -c 10 -f 10.1.0.66
+ping -c 10 -f 192.168.255.1
+ping -c 10 -f 192.168.255.2
+ping -c 10 -f 192.168.255.3
+ping -c 10 -f 192.168.255.4
+ping -c 10 -f 192.168.255.101
+ping -c 10 -f 192.168.255.102
+ping -c 10 -f 192.168.255.201
+ping -c 10 -f 192.168.255.202
+ntpstat
