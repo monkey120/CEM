@@ -1,6 +1,6 @@
 5c10s9:
 =======
-cat /etc/sysconfig/network-scripts/ifcfg-ens2f0
+cat << EOFF > /etc/sysconfig/network-scripts/ifcfg-ens2f0
 TYPE=Ethernet
 BOOTPROTO=static
 NAME=ens2f0
@@ -10,8 +10,9 @@ NETWORK=10.1.0.0
 NETMASK=255.255.255.192
 IPADDR=10.1.0.2
 NM_CONTROLLED=no
+EOFF
 
-cat /etc/sysconfig/network-scripts/route-ens2f0
+cat << EOFF > /etc/sysconfig/network-scripts/route-ens2f0
 ADDRESS0=10.1.0.0
 NETMASK0=255.255.0.0
 GATEWAY0=10.1.0.1
@@ -21,12 +22,17 @@ GATEWAY1=10.1.0.1
 ADDRESS2=192.168.0.0
 NETMASK2=255.255.255.128
 GATEWAY2=10.1.0.1
+EOFF
 
+systemctl enable ntpd
+systemctl restart ntpd
+systemctl status ntpd
+systemctl restart network
 
 5c10s7-node1:
 =============
 
-cat /etc/sysconfig/network-scripts/ifcfg-ens2f1
+cat  << EOFF > /etc/sysconfig/network-scripts/ifcfg-ens2f1
 TYPE=Ethernet
 BOOTPROTO=static
 IPV4_FAILURE_FATAL=no
@@ -37,21 +43,26 @@ NETWORK=10.1.0.0
 NETMASK=255.255.255.192
 IPADDR=10.1.0.3
 NM_CONTROLLED=no
+EOFF
 
-cat /etc/sysconfig/network-scripts/route-ens2f1
+cat << EOFF > /etc/sysconfig/network-scripts/route-ens2f1
 ADDRESS0=10.1.0.0
 NETMASK0=255.255.0.0
 GATEWAY0=10.1.0.1
 ADDRESS1=192.168.255.0
 NETMASK1=255.255.255.0
 GATEWAY1=10.1.0.1
+EOFF
 
-
+systemctl enable ntpd
+systemctl restart ntpd
+systemctl status ntpd
+systemctl restart network
 
 5c10s7-node3:
 =============
 
-cat /etc/sysconfig/network-scripts/ifcfg-ens2f1
+cat << EOFF > /etc/sysconfig/network-scripts/ifcfg-ens2f1
 TYPE=Ethernet
 BOOTPROTO=static
 IPV4_FAILURE_FATAL=no
@@ -62,21 +73,26 @@ NETWORK=10.1.0.64
 NETMASK=255.255.255.192
 IPADDR=10.1.0.67
 NM_CONTROLLED=no
+EOFF
 
 
-
-cat /etc/sysconfig/network-scripts/route-ens2f1
+cat << EOFF > /etc/sysconfig/network-scripts/route-ens2f1
 ADDRESS0=10.1.0.0
 NETMASK0=255.255.0.0
 GATEWAY0=10.1.0.65
 ADDRESS1=192.168.255.0
 NETMASK1=255.255.255.0
 GATEWAY1=10.1.0.65
+EOFF
 
+systemctl enable ntpd
+systemctl restart ntpd
+systemctl status ntpd
+systemctl restart network
 
 5c10s11:
 =============
-cat /etc/sysconfig/network-scripts/ifcfg-ens1f1
+cat << EOFF > /etc/sysconfig/network-scripts/ifcfg-ens1f1
 BOOTPROTO=static
 IPV4_FAILURE_FATAL=no
 NAME=ens1f1
@@ -86,21 +102,26 @@ NETWORK=10.1.0.128
 NETMASK=255.255.255.192
 IPADDR=10.1.0.130
 NM_CONTROLLED=no
+EOFF
 
-
-cat /etc/sysconfig/network-scripts/route-ens1f1
+cat << EOFF > /etc/sysconfig/network-scripts/route-ens1f1
 ADDRESS0=10.1.0.0
 NETMASK0=255.255.0.0
 GATEWAY0=10.1.0.129
 ADDRESS1=192.168.255.0
 NETMASK1=255.255.255.0
 GATEWAY1=10.1.0.129
+EOFF
 
+systemctl enable ntpd
+systemctl restart ntpd
+systemctl status ntpd
+systemctl restart network
 
 5c10s12:
 =============
 
-cat  /etc/sysconfig/network-scripts/ifcfg-ens1f0
+cat << EOFF >  /etc/sysconfig/network-scripts/ifcfg-ens1f0
 TYPE=Ethernet
 BOOTPROTO=static
 NAME=ens1f0
@@ -109,12 +130,18 @@ ONBOOT=yes
 NETWORK=10.1.0.64
 NETMASK=255.255.255.192
 IPADDR=10.1.0.66
+EOFF
 
-cat  /etc/sysconfig/network-scripts/route-ens1f0
+cat << EOFF >  /etc/sysconfig/network-scripts/route-ens1f0
 ADDRESS0=10.1.0.0
 NETMASK0=255.255.0.0
 GATEWAY0=10.1.0.65
 ADDRESS1=192.168.255.0
 NETMASK1=255.255.255.0
 GATEWAY1=10.1.0.65
+EOFF
 
+systemctl enable ntpd
+systemctl restart ntpd
+systemctl status ntpd
+systemctl restart network
